@@ -1,0 +1,758 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "My API",
+        "description": "API documentation using Swagger",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/categories": {
+            "get": {
+                "summary": "Get list of categories",
+                "operationId": "ac9c4d978ea4e5b72915ca9728e5b8b1",
+                "responses": {
+                    "200": {
+                        "description": "A list of categories"
+                    }
+                }
+            }
+        },
+        "/api/galleries": {},
+        "/api/groups": {
+            "get": {
+                "summary": "Get list of groups",
+                "operationId": "ac30b3897794f3ee24af2af44d36ce5d",
+                "responses": {
+                    "200": {
+                        "description": "A list of groups"
+                    }
+                }
+            }
+        },
+        "/api/langs": {
+            "get": {
+                "summary": "Get list of languages",
+                "operationId": "c3dbb59454e7bdac606d5d44294d4f3b",
+                "responses": {
+                    "200": {
+                        "description": "A list of languages"
+                    }
+                }
+            }
+        },
+        "/api/otzivis": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "09d8d7d281ef742f6daead3420c440a0",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/portfolio-categories": {},
+        "/api/portfolios": {},
+        "/api/posts": {},
+        "/api/product-categories": {},
+        "/api/products": {},
+        "/api/sertificate": {},
+        "/api/services": {},
+        "/api/service-categories": {},
+        "/api/teams": {},
+        "/api/translations": {},
+        "/api/zayavkas": {
+            "post": {
+                "tags": [
+                    "Zayavka"
+                ],
+                "summary": "Create a new zayavka",
+                "operationId": "0cba6c1cbc98a2898f523c7f7cfe37f6",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Zayavka"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/api/categories/{id}": {
+            "get": {
+                "summary": "Get a category by ID",
+                "operationId": "09767bb2e47dde77dd1e2591428b0ae1",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A category"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/banners": {
+            "get": {
+                "summary": "Get list of galleries",
+                "operationId": "87ccfb3533d0f233329e6cc3620e2e2c",
+                "responses": {
+                    "200": {
+                        "description": "A list of galleries"
+                    }
+                }
+            }
+        },
+        "/api/banners/{id}": {
+            "get": {
+                "summary": "Get a gallery by ID",
+                "operationId": "d507ea8cbd697940f0abbf8fa621b0b7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A gallery"
+                    },
+                    "404": {
+                        "description": "Gallery not found"
+                    }
+                }
+            }
+        },
+        "/api/groups/{id}": {
+            "get": {
+                "summary": "Get a group by ID",
+                "operationId": "8205d284770b45579f4f4c21e9f7988b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A group"
+                    },
+                    "404": {
+                        "description": "Group not found"
+                    }
+                }
+            }
+        },
+        "/api/langs/{id}": {
+            "get": {
+                "summary": "Get a language by ID",
+                "operationId": "a897d612a2bcc80351b50ce3c64e3226",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A language"
+                    },
+                    "404": {
+                        "description": "Language not found"
+                    }
+                }
+            }
+        },
+        "/api/otzivis/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "03c02657f9be7e221b451fa662aefbe6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/partners": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "d2f5b1ee8f50962d7ef84d5b0eb3f875",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/partners/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "d84bed521ab02de544d86f9015755be2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolio-categories/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "abf5fe0e9378ee37924f546ddcd1841d",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/portfolio-categories/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "fe45444548bbe465d5c41e00f6d8d43f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolios/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "7132f9b3802beef03d5ddd6a24e186ad",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/portfolio/category": {
+            "get": {
+                "summary": "Get products by category",
+                "operationId": "5f1eb3b7a4d6762fff9a7fb051d07b61",
+                "parameters": [
+                    {
+                        "name": "portfolio_category_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of products"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/portfolios/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "d09ea4699d5554b97cf7d37851199f9e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/posts/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "d3736e03cd3d1c5c7b67db654db0d30e",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/post/category": {
+            "get": {
+                "summary": "Get products by category",
+                "operationId": "85b53ed93099a2d7cc216b1790639b0e",
+                "parameters": [
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of products"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/posts/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "142b5adb0520cca80cedfe09d9298332",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/product-categories/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "5f6f45b7e622da9993f12fbe8d42337d",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/product-categories/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "66bf645e3092240cc3f15c5d0e54b99e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/products/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "2ab94359bc2d2368d24031d5f6fff9d3",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/product/category": {
+            "get": {
+                "summary": "Get products by category",
+                "operationId": "0c0ba0e02625b513d0c7a30a5680068f",
+                "parameters": [
+                    {
+                        "name": "product_category_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of products"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/products/{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "c87fb2e4d617e7b36c712cad358acdb8",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/sertificate/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "0a75907ccf12b32ecd5c877eb7724a1d",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/sertificate{id}": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "f994be557a56ccee373cef3c82ff400f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/services/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "cb005c6a8bfd84ec82203d49034721d4",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/service/category": {
+            "get": {
+                "summary": "Get products by category",
+                "operationId": "403c10e9711933340b6a5a7800e85650",
+                "parameters": [
+                    {
+                        "name": "category_id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A list of products"
+                    },
+                    "404": {
+                        "description": "Category not found"
+                    }
+                }
+            }
+        },
+        "/api/services{id]": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "7c1bb9cc74b936c1205e48ef7e946e41",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/service-categories/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "7a8b5219aadd2e313798f606a5140f8a",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/service-categories{id]": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "cadcf99d034b978a4ea4041b105c1b1c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/teams/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "eaa6257781d0a8d90fe7ebfe4888793b",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/teams{id]": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "1e08af030aece9716e516e6f945125d2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/translations/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "05eaec9ed89f5967b3e01e5d9efd8476",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        },
+        "/api/translations{id]": {
+            "get": {
+                "summary": "Get a review by ID",
+                "operationId": "6f50618c325378adc7defef61287d512",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A review"
+                    },
+                    "404": {
+                        "description": "Review not found"
+                    }
+                }
+            }
+        },
+        "/api/zayavkas/": {
+            "get": {
+                "summary": "Get list of reviews",
+                "operationId": "878ad7b65f74fac20ef3f3e96d1381a1",
+                "responses": {
+                    "200": {
+                        "description": "A list of reviews"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Zayavka": {
+                "required": [
+                    "first_name",
+                    "last_name",
+                    "phone_number"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "example": "Doe"
+                    },
+                    "phone_number": {
+                        "type": "string",
+                        "example": "+123456789"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "ndc@gmail.com"
+                    },
+                    "company": {
+                        "type": "string",
+                        "example": "NDC"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
