@@ -73,7 +73,7 @@
                                                 <!--begin::Input-->
                                                 <input type="text" name="title[{{ $language->small }}]"
                                                     class="form-control mb-2" placeholder="title {{ $language->small }}..."
-                                                    @if ($language->small != 'uz') @else value="{{ $service->title[$language->small] }}" @endif />
+                                                    value="{{ $service->title[$language->small] }}" />
                                                 @error('title[{{ $language->small }}]')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -83,9 +83,8 @@
                                             <div>
                                                 <!--begin::Label-->
                                                 <label class="form-label">Description-{{ $language->lang }}</label>
-                                                <textarea name="descriptions[{{ $language->small }}]" class="form-control ckeditor" required> @if ($language->small != 'uz')
-@else{!! $service->descriptions[$language->small] !!}
-@endif </textarea>
+                                                <textarea name="descriptions[{{ $language->small }}]" class="form-control ckeditor">{!! $service->descriptions[$language->small] !!}
+</textarea>
 
                                             </div>
                                             <!--end::Input group-->
@@ -120,51 +119,6 @@
                     <!--begin::Thumbnail settings-->
                     <div class="card card-flush py-4">
 
-
-
-                        <div class="card-header">
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <h2>Edit category</h2>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <!--begin::Select2-->
-                            <select class="form-select mb-2" data-control="select2" name="service_category_id"
-                                id="kt_ecommerce_add_category_status_select">
-                                <option value="{{ $service->category_id }}" selected="false" disabled="disabled">
-                                    {{ $service->title['uz'] }}</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title['uz'] }}
-                                        {{-- @if ($category->categories->isNotEmpty())
-                                @foreach ($category->categories as $subcategory)
-                                <option value="{{ null }}">{{$category->title['uz']}}</option>
-                                    @endforeach
-                                    @else
-                                    <p> NO Categories</p>
-                                    @endif</option> --}}
-                                @endforeach
-                            </select>
-                            {{-- <label for="firstSelect">Birinchi tanlov:</label>
-                            <select id="firstSelect" onchange="handleFirstSelectChange()">
-                                <option value="">Tanlang</option>
-                                @foreach ($categories as $category)
-                                    <option value="mobil" id="mobil">Mobile</option>
-                                @endforeach
-                                <option value="model">Model</option>
-
-                            </select>
-                            <br><br>
-                            <div id="secondSelectContainer" style="display: none;">
-                                <label for="secondSelect">Ikkinchi tanlov:</label>
-                                <select id="secondSelect">
-                                    <option value="">Tanlang</option>
-                                    <option value="samsung">Samsung</option>
-                                    <option value="iphone">iPhone</option>
-                                </select>
-                            </div> --}}
-
-                        </div>
                         <div class="card-header">
 
                             <!--begin::Card title-->
@@ -176,7 +130,7 @@
                         <div class="card-body  pt-0">
                             <!--begin::Image input-->
                             <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true"
-                                style="background-image: url({{ asset($service->photo) }})">
+                                style="background-image: url({{ asset('storage/' . ($service->photo ?? 'default.jpg')) }})">
                                 <!--begin::Preview existing avatar-->
                                 <div class="image-input-wrapper w-150px h-150px"></div>
                                 <!--end::Preview existing avatar-->

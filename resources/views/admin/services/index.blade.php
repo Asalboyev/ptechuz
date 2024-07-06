@@ -84,7 +84,7 @@
                                 </div>
                             </th>
                             <th class="min-w-200px">Servic</th>
-                            <th class="text-end min-w-100px">Categories</th>
+                            <!--<th class="text-end min-w-100px">Categories</th>-->
                             <th class="text-end min-w-70px">Created time</th>
                             <th class="text-end min-w-100px">Status</th>
                             <th class="text-end min-w-70px">Actions</th>
@@ -108,13 +108,13 @@
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <!--begin::Thumbnail-->
-                                        <a href="{{ asset($servic->photo) }}" download="{{ basename($servic->photo) }}"
+                                        <a href="{{ asset('storage/'.($servic->photo ?? 'default.jpg')) }}"  
                                             class="symbol symbol-50px">
                                             @if (in_array(pathinfo($servic->photo, PATHINFO_EXTENSION), ['jpeg', 'png', 'jpg']))
                                                 <span class="symbol-label"
-                                                    style="background-image:url({{ asset($servic->photo) }});"></span>
+                                                    style="background-image:url({{ asset('storage/'.($servic->photo ?? 'default.jpg')) }});"></span>
                                             @elseif (pathinfo($servic->photo, PATHINFO_EXTENSION) == 'pdf')
-                                                <embed src="{{ asset($servic->photo) }}" type="application/pdf"
+                                                <embed src="{{ asset('storage/' . ($servic->photo ?? 'default.jpg')) }}" type="application/pdf"
                                                     width="100%" height="200px" />
                                             @endif
                                         </a>
@@ -122,18 +122,12 @@
                                         <div class="ms-5">
                                             <!--begin::Title-->
                                             <a href="" class="text-gray-800 text-hover-primary fs-5 fw-bolder"
-                                                data-kt-ecommerce-product-filter="product_name">{{ $servic->title['uz'] }}</a>
+                                                data-kt-ecommerce-product-filter="product_name">{{ $servic->title['en'] }}</a>
                                             <!--end::Title-->
                                         </div>
                                     </div>
                                 </td>
-                                <!--end::Category=-->
-                                <!--begin::SKU=-->
-                                <td class="text-end pe-0">
-                                    <span class="fw-bolder">{{ $servic->service_category->title['uz'] }}</span>
-                                </td>
-                                <!--end::SKU=-->
-                                <!--begin::Qty=-->
+                             
                                 <td class="text-end pe-0" data-order="25">
                                     <span class="fw-bolder ms-3">{{ $servic->created_at }}</span>
                                 </td>

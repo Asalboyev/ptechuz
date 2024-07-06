@@ -77,7 +77,7 @@
                                 </div>
                             </th>
                             <th class="min-w-200px">Posts</th>
-                            <th class="text-end min-w-100px">Categories</th>
+                            <!--<th class="text-end min-w-100px">Categories</th>-->
                             <th class="text-end min-w-70px">Created time</th>
                             <th class="text-end min-w-100px">Status</th>
                             <th class="text-end min-w-70px">Actions</th>
@@ -103,24 +103,18 @@
                                         <!--begin::Thumbnail-->
                                         <a href="#0" class="symbol symbol-50px">
                                             <span class="symbol-label"
-                                                style="background-image:url({{ asset($post->photo) }});"></span>
+                                                style="background-image:url({{ asset('storage/' . ($post->photo ?? 'default.jpg')) }});"></span>
                                         </a>
                                         <!--end::Thumbnail-->
                                         <div class="ms-5">
                                             <!--begin::Title-->
                                             <a href="" class="text-gray-800 text-hover-primary fs-5 fw-bolder"
-                                                data-kt-ecommerce-product-filter="product_name">{{ $post->title['uz'] }}</a>
+                                                data-kt-ecommerce-product-filter="product_name">{{ $post->title['en'] }}</a>
                                             <!--end::Title-->
                                         </div>
                                     </div>
                                 </td>
-                                <!--end::Category=-->
-                                <!--begin::SKU=-->
-                                <td class="text-end pe-0">
-                                    <span class="fw-bolder">{{ $post->category->title['uz'] }}</span>
-                                </td>
-                                <!--end::SKU=-->
-                                <!--begin::Qty=-->
+                           
                                 <td class="text-end pe-0" data-order="25">
                                     <span class="fw-bolder ms-3">{{ $post->created_at }}</span>
                                 </td>

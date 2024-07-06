@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-Banner
+    Banner
 @endsection
 
 @section('content')
@@ -40,7 +40,7 @@ Banner
                             </th>
                             {{-- <th class="min-w-200px">Video</th> --}}
                             <th class="text-end min-w-100px">Banners</th>
-                            <th class="text-end min-w-100px">Title</th>
+                            <!--<th class="text-end min-w-100px">Title</th>-->
                             <th class="text-end min-w-70px">Created time</th>
                             <th class="text-end min-w-70px">Actions</th>
                         </tr>
@@ -60,7 +60,7 @@ Banner
                                 </td>
                                 {{-- <td>
 
-                                    <a href="{{ asset($gallery->videos) }}" target="_blank" class="symbol symbol-50px">
+                                    <a href="{{ asset($gallery->photo) }}" target="_blank" class="symbol symbol-50px">
                                         <video width="200" height="180 " controls>
                                             <source src="{{ asset($gallery->videos) }}" type="video/mp4">
                                             Your browser does not support the video tag.
@@ -68,15 +68,16 @@ Banner
                                     </a>
                                 </td> --}}
                                 <td class="text-end pe-0" data-order="25">
-                                    <a href="{{ asset($gallery->photo) }}" target="_blank" class="symbol symbol-50px">
+                                    <a href="{{ asset('storage/' . ($gallery->photo ?? 'default.jpg')) }}" target="_blank"
+                                        class="symbol symbol-50px">
                                         <span class="symbol-label"
-                                            style="background-image:url({{ asset($gallery->photo) }});"></span>
+                                            style="background-image:url({{ asset('storage/' . ($gallery->photo ?? 'default.jpg')) }});"></span>
                                     </a>
 
                                 </td>
-                                <td class="text-end pe-0">
+                                {{-- <td class="text-end pe-0">
                                     <span class="fw-bolder">{{ $gallery->title['en'] }}</span>
-                                </td>
+                                </td> --}}
                                 <td class="text-end pe-0" data-order="25">
                                     <span class="fw-bolder ms-3">{{ $gallery->created_at }}</span>
                                 </td>
@@ -161,7 +162,7 @@ Banner
                                 </div>
 
 
-                                @foreach ($languages as $language)
+                                {{-- @foreach ($languages as $language)
                                     <div class="col-md-6 fv-row">
                                         <!--end::Label-->
                                         <label class="required fs-5 fw-bold mb-2">Title {{ $language->small }}</label>
@@ -175,13 +176,13 @@ Banner
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
-                                @endforeach
+                                @endforeach --}}
                             </div>
                         </div>
                         <div class="modal-footer flex-center">
                             <!--begin::Button-->
-                            <button type="reset" id="kt_modal_new_address_cancel"
-                                class="btn btn-light me-3">Discard</button>
+                            <a href="{{ route('admin.banners.index') }}" id="kt_modal_new_address_cancel"
+                                class="btn btn-light me-3">Discard</a>
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_modal_new_address_submit" class="btn btn-primary">

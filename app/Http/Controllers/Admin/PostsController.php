@@ -50,7 +50,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title.uz' => 'required'
+            'title.en' => 'required'
         ]);
 
         $data = $request->all();
@@ -81,7 +81,7 @@ class PostsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title.uz' => 'required'
+            'title.en' => 'required'
         ]);
 
         $post = Post::findOrFail($id);

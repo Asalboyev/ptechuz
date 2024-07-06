@@ -51,7 +51,7 @@ class ServicesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title.uz' => 'required'
+            'title.en' => 'required'
         ]);
 
         $data = $request->all();
@@ -67,7 +67,7 @@ class ServicesController extends Controller
     public function sertificates_store(Request $request)
     {
         $request->validate([
-            'title.uz' => 'required'
+            'title.en' => 'required'
         ]);
 
         $data = $request->all();
@@ -97,7 +97,7 @@ class ServicesController extends Controller
     public function update(Request $request,$id )
     {
         $request->validate([
-            'title.uz' => 'required'
+            'title.en' => 'required'
         ]);
 
         $servic = Servic::findOrFail($id);

@@ -5,8 +5,9 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="{{route('admin.z.index')}}">
-            <h1 style="color: aliceblue">Superadminka</h1></a>
+        <a href="{{ route('admin.z.index') }}">
+            <h1 style="color: aliceblue">Superadminka</h1>
+        </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->
         <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle"
@@ -39,9 +40,9 @@
             <!--begin::Menu-->
             <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
                 id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div class="menu-item here show menu-accordion">
+                <div class="menu-item{{ Request::routeIs('admin.z.index') ? ' here  menu-accordion' : '' }} ">
 
-                    <span class="menu-link">
+                    <span class="menu-link ">
                         <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                 width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -51,115 +52,54 @@
                                         fill="currentColor"></path>
                                 </g>
                             </svg></span>
-                        <a class="menu-link" href="{{ route('admin.z.index') }}">
+                        <a href="{{ route('admin.z.index') }}">
                             <span class="menu-title">Zayavkas</span>
                         </a>
                     </span>
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.service_categories.index', 'admin.services.index') ? ' here show menu-accordion' : '' }}">
-                        <span class="menu-link">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <path
-                                            d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
-                                            fill="currentColor"></path>
-                                    </g>
-                                </svg></span>
-                            <span class="menu-title">Services</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.service_categories.index') ? 'active' : '' }}" href="{{ route('admin.service_categories.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Categories</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.services.index') ? 'active' : '' }}" href="{{ route('admin.services.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Services</span>
-                                </a>
-                            </div>
-                        </div>
+                    <div
+                        class="menu-item menu-accordion {{ Request::routeIs('admin.services.index') ? ' here show menu-accordion' : '' }}">
+                        <a {{ Request::routeIs('admin.services.index') ? 'active' : '' }}"
+                            href="{{ route('admin.services.index') }}">
+                            <span class="menu-link">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <path
+                                                d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                    </svg></span>
+
+                                <span class="menu-title">Services</span>
+
+                            </span>
+                        </a>
+                    </div>
+                    <div
+                        class="menu-item menu-accordion {{ Request::routeIs('admin.posts.index') ? ' here show menu-accordion' : '' }}">
+                        <a {{ Request::routeIs('admin.services.index') ? 'active' : '' }}"
+                            href="{{ route('admin.posts.index') }}">
+
+                            <span class="menu-link">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <path
+                                                d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                    </svg></span>
+
+                                <span class="menu-title">News</span>
+
+                            </span>
+                        </a>
                     </div>
 
-{{--
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.categories.index', 'admin.posts.index') ? ' here show menu-accordion' : '' }}">
-                        <span class="menu-link">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <path
-                                            d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
-                                            fill="currentColor"></path>
-                                    </g>
-                                </svg></span>
-                            <span class="menu-title">Pressa</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.categories.index') ? 'active' : '' }}" href="{{ route('admin.categories.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Categories</span>
-                                </a>
-                            </div>
+                    {{--
 
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.posts.index') ? 'active' : '' }}"" href="{{ route('admin.posts.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Posts</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>--}}
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.categories.index', 'admin.posts.index') ? ' here show menu-accordion' : '' }}">
-                        <span class="menu-link">
-                            <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <rect x="0" y="0" width="24" height="24"></rect>
-                                        <path
-                                            d="M5,8.6862915 L5,5 L8.6862915,5 L11.5857864,2.10050506 L14.4852814,5 L19,5 L19,9.51471863 L21.4852814,12 L19,14.4852814 L19,19 L14.4852814,19 L11.5857864,21.8994949 L8.6862915,19 L5,19 L5,15.3137085 L1.6862915,12 L5,8.6862915 Z M12,15 C13.6568542,15 15,13.6568542 15,12 C15,10.3431458 13.6568542,9 12,9 C10.3431458,9 9,10.3431458 9,12 C9,13.6568542 10.3431458,15 12,15 Z"
-                                            fill="currentColor"></path>
-                                    </g>
-                                </svg></span>
-                            <span class="menu-title">Posts</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.categories.index') ? 'active' : '' }}" href="{{ route('admin.categories.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Categories</span>
-                                </a>
-                            </div>
-
-                            <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.posts.index') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Posts</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
                     {{-- <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.service_categories.index', 'admin.services.index') ? ' here show menu-accordion' : '' }}">
                         <span class="menu-link">
                             <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -195,7 +135,8 @@
 
                         </div>
                     </div> --}}
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.teams.index', 'admin.otzivi.index', 'admin.faq.index', 'admin.sertificates.index', 'admin.partners.index', 'admin.galleries.index') ? ' here show menu-accordion' : '' }}">
+                    <div data-kt-menu-trigger="click"
+                        class="menu-item menu-accordion {{ Request::routeIs('admin.teams.index', 'admin.otzivi.index', 'admin.faq.index', 'admin.sertificates.index', 'admin.partners.index', 'admin.galleries.index') ? ' here show menu-accordion' : '' }}">
                         <span class="menu-link">
                             <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -244,7 +185,8 @@
                             </div> --}}
 
                             <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.partners.index','admin.partners.create','admin.partners.edit','admin.information.index') ? 'active' : '' }}" href="{{ route('admin.partners.index') }}">
+                                <a class="menu-link {{ Request::routeIs('admin.partners.index', 'admin.partners.create', 'admin.partners.edit', 'admin.information.index') ? 'active' : '' }}"
+                                    href="{{ route('admin.partners.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -252,7 +194,8 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.banners.index') ? 'active' : '' }}" href="{{ route('admin.banners.index') }}">
+                                <a class="menu-link {{ Request::routeIs('admin.banners.index') ? 'active' : '' }}"
+                                    href="{{ route('admin.banners.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -271,7 +214,8 @@
 
                         </div>
                     </div>
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ Request::routeIs('admin.translations.index', 'admin.langs.index') ? ' here show menu-accordion' : '' }}">
+                    <div data-kt-menu-trigger="click"
+                        class="menu-item menu-accordion {{ Request::routeIs('admin.translations.index', 'admin.langs.index') ? ' here show menu-accordion' : '' }}">
                         <span class="menu-link">
                             <span><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -287,7 +231,8 @@
                         </span>
                         <div class="menu-sub menu-sub-accordion menu-active-bg">
                             <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.translations.index') ? 'active' : '' }}" href="{{ route('admin.translations.index') }}">
+                                <a class="menu-link {{ Request::routeIs('admin.translations.index') ? 'active' : '' }}"
+                                    href="{{ route('admin.translations.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -295,7 +240,8 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a class="menu-link {{ Request::routeIs('admin.langs.index') ? 'active' : '' }}" href="{{ route('admin.langs.index') }}">
+                                <a class="menu-link {{ Request::routeIs('admin.langs.index') ? 'active' : '' }}"
+                                    href="{{ route('admin.langs.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>

@@ -71,7 +71,7 @@
                                                 <!--begin::Input-->
                                                 <input type="text" name="title[{{ $language->small }}]"
                                                     class="form-control mb-2" placeholder="title {{ $language->small }}..."
-                                                    @if ($language->small != 'en') @else value="{{ $partner->title[$language->small] }}" @endif />
+                                                     value="{{ $partner->title[$language->small] }}" />
                                                 @error('title[{{ $language->small }}]')
                                                     <div class="invalid-feedback">{{ $message }}</div>
                                                 @enderror
@@ -81,7 +81,7 @@
                                             <div>
                                                 <!--begin::Label-->
                                                 <label class="form-label">Description-{{ $language->lang }}</label>
-                                                <textarea name="descriptions[{{ $language->small }}]" class="form-control ckeditor" required> @if ($language->small != 'en')@else{!! $partner->descriptions[$language->small] !!}@endif </textarea>
+                                                <textarea name="descriptions[{{ $language->small }}]" class="form-control ckeditor" required> {!! $partner->descriptions[$language->small] !!} </textarea>
 
                                             </div>
                                             <!--end::Input group-->
@@ -98,11 +98,7 @@
                     </div>
                     <!--end::Tab content-->
                     <div class="d-flex justify-content-end">
-                        <!--begin::Button-->
-                        <!--<a href="{{route('admin.')"-->
-                        <!--    class="btn btn-light me-5">Cancel</a>-->
-                        <!--end::Button-->
-                        <!--begin::Button-->
+
                         <button type="submit" id="kt_ecommerce_add_product_submit" class="btn btn-primary">
                             <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

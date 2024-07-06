@@ -31,115 +31,8 @@
                 <!--begin::Main column-->
 
 <!--begin::Aside column-->
-                <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10" style="margin-left: 2rem; margin-top:5.5rem">
-                    <!--begin::Thumbnail settings-->
-                    <div class="card card-flush py-4">
-
-
-
-                        <div class="card-header">
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <h2>Add Subccategory</h2>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <!--begin::Select2-->
-                            <select class="form-select mb-2" data-control="select2" name="category_id" required
-                                id="kt_ecommerce_add_category_status_select">
-                                <option value="{{ null }}">NUll</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title['en'] }}
-                                @endforeach
-                            </select>
-
-
-
-                        </div>
-                        <div class="card-header">
-
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <h2>Photo</h2>
-                            </div>
-                            <!--end::Card title-->
-                        </div>
-                        <div class="card-body  pt-0">
-                            <!--begin::Image input-->
-                            <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true"
-                                style="background-image: url(assets/media/svg/files/blank-image.svg)">
-                                <!--begin::Preview existing avatar-->
-                                <div class="image-input-wrapper w-150px h-150px"></div>
-                                <!--end::Preview existing avatar-->
-                                <!--begin::Label-->
-                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                    data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                    <!--begin::Icon-->
-                                    <i class="bi bi-pencil-fill fs-7"></i>
-                                    <input type="file" name="photo" accept=".png, .jpg, .jpeg, .webp" />
-                                    <input type="hidden" name="avatar_remove" />
-                                </label>
-                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                    data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                                    data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                                    <i class="bi bi-x fs-2"></i>
-                                </span>
-                                <!--end::Remove-->
-                            </div>
-                            <!--end::Image input-->
-                            <!--begin::Description-->
-                            {{-- <div class="text-muted fs-7">Set the category thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted</div> --}}
-                            <!--end::Description-->
-                        </div>
-
-                        <!--begin::Card header-->
-                        <div class="card-header">
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <h2>Status</h2>
-                            </div>
-                        </div>
-                        <!--end::Card header-->
-                        <!--begin::Card body-->
-                        <div class="card-body pt-0">
-                            <!--begin::Select store template-->
-                            <label for="kt_ecommerce_add_category_store_template" class="form-label">Select a status</label>
-                            <!--end::Select store template-->
-                            <!--begin::Select2-->
-                            <select class="form-select mb-2" data-control="select2" name="status" data-hide-search="true"
-                                data-placeholder="Select an option" id="kt_ecommerce_add_category_store_template">
-                                <option value="{{ null }}">Null</option>
-                                <option value="Active">Active</option>
-                                <option value="Inacitve">Inacitve</option>
-                                {{--                                <option value="True">True</option> --}}
-                                {{--                                <option value="False">False</option> --}}
-                            </select>
-
-                            <!--end::Description-->
-                        </div>
-                        {{--                        <div class="card-body pt-0"> --}}
-                        {{--                            <!--begin::Select store template--> --}}
-                        {{--                            <label for="kt_ecommerce_add_category_store_template" class="form-label">order</label> --}}
-                        {{--                            <input type="number" name="order" id="checkbox" class="form-control mb-2"> --}}
-                        {{--                        </div> --}}
-                        {{--                        <div class="card-body pt-0"> --}}
-                        {{--                            <!--begin::Select store template--> --}}
-                        {{--                            <label for="kt_ecommerce_add_category_store_template" class="form-label">popular</label> --}}
-                        {{--                            <input type="checkbox" value="active" name="popular" class="custom-switch-input"> --}}
-                        {{--                            <span class="custom-switch-indicator"></span> --}}
-                        {{--                        </div> --}}
-                        <!--end::Card body-->
-
-                        <!--end::Card body-->
-                    </div>
-                    <!--end::Thumbnail settings-->
-                    <!--begin::Status-->
-
-                </div>
-<div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10" style="margin-left: 2rem; margin-top:5.5rem">
+            
+<div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10" >
                     <!--begin:::Tabs-->
                     <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
                         <!--begin:::Tab item-->
@@ -202,6 +95,92 @@
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                         </button>
                     </div>
+                </div>
+                    <div class="d-flex flex-column gap-7 gap-lg-10 w-100 w-lg-300px mb-7 me-lg-10" style="margin-left: 2rem; margin-top:5rem">
+                    <!--begin::Thumbnail settings-->
+                    <div class="card card-flush py-4">
+
+                        <div class="card-header">
+
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>Photo</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <div class="card-body  pt-0">
+                            <!--begin::Image input-->
+                            <div class="image-input image-input-empty image-input-outline mb-3" data-kt-image-input="true"
+                                style="background-image: url(assets/media/svg/files/blank-image.svg)">
+                                <!--begin::Preview existing avatar-->
+                                <div class="image-input-wrapper w-150px h-150px"></div>
+                                <!--end::Preview existing avatar-->
+                                <!--begin::Label-->
+                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                    data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                    <!--begin::Icon-->
+                                    <i class="bi bi-pencil-fill fs-7"></i>
+                                    <input type="file" name="photo" accept=".png, .jpg, .jpeg, .webp" />
+                                    <input type="hidden" name="avatar_remove" />
+                                </label>
+                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                    data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                    <i class="bi bi-x fs-2"></i>
+                                </span>
+                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                                    data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                    <i class="bi bi-x fs-2"></i>
+                                </span>
+                                <!--end::Remove-->
+                            </div>
+                            <!--end::Image input-->
+                            <!--begin::Description-->
+                            {{-- <div class="text-muted fs-7">Set the category thumbnail image. Only *.png, *.jpg and *.jpeg image files are accepted</div> --}}
+                            <!--end::Description-->
+                        </div>
+
+                        <!--begin::Card header-->
+                        <div class="card-header">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>Status</h2>
+                            </div>
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-0">
+                            <!--begin::Select store template-->
+                            <label for="kt_ecommerce_add_category_store_template" class="form-label">Select a status</label>
+                            <!--end::Select store template-->
+                            <!--begin::Select2-->
+                            <select class="form-select mb-2" data-control="select2" name="status" data-hide-search="true"
+                                data-placeholder="Select an option" id="kt_ecommerce_add_category_store_template">
+                                <option value="Active">Active</option>
+                                <option value="Inacitve">Inacitve</option>
+                                {{--                                <option value="True">True</option> --}}
+                                {{--                                <option value="False">False</option> --}}
+                            </select>
+
+                            <!--end::Description-->
+                        </div>
+                        {{--                        <div class="card-body pt-0"> --}}
+                        {{--                            <!--begin::Select store template--> --}}
+                        {{--                            <label for="kt_ecommerce_add_category_store_template" class="form-label">order</label> --}}
+                        {{--                            <input type="number" name="order" id="checkbox" class="form-control mb-2"> --}}
+                        {{--                        </div> --}}
+                        {{--                        <div class="card-body pt-0"> --}}
+                        {{--                            <!--begin::Select store template--> --}}
+                        {{--                            <label for="kt_ecommerce_add_category_store_template" class="form-label">popular</label> --}}
+                        {{--                            <input type="checkbox" value="active" name="popular" class="custom-switch-input"> --}}
+                        {{--                            <span class="custom-switch-indicator"></span> --}}
+                        {{--                        </div> --}}
+                        <!--end::Card body-->
+
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Thumbnail settings-->
+                    <!--begin::Status-->
+
                 </div>
             </form>
         </div>

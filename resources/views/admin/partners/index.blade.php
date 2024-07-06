@@ -108,7 +108,7 @@
                                         <div class="ms-5">
                                             <!--begin::Title-->
                                             <a href="" class="text-gray-800 text-hover-primary fs-5 fw-bolder"
-                                                data-kt-ecommerce-product-filter="product_name">{{ $partnert->title['uz'] }}</a>
+                                                data-kt-ecommerce-product-filter="product_name">{{ $partnert->title['en'] }}</a>
                                             <!--end::Title-->
                                         </div>
                                     </div>

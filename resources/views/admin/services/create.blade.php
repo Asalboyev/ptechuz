@@ -99,27 +99,6 @@
                     <!--begin::Thumbnail settings-->
                     <div class="card card-flush py-4">
 
-
-
-                        <div class="card-header">
-                            <!--begin::Card title-->
-                            <div class="card-title">
-                                <h2> Subccategory</h2>
-                            </div>
-                        </div>
-                        <div class="card-body pt-0">
-                            <!--begin::Select2-->
-                            <select class="form-select mb-2" data-control="select2" name="service_category_id" required
-                                id="kt_ecommerce_add_category_status_select">
-                                {{--                                <option value="{{ null }}">NUll</option> --}}
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title['en'] }}
-                                @endforeach
-                            </select>
-
-
-
-                        </div>
                         <div class="card-header">
 
                             <!--begin::Card title-->
@@ -175,7 +154,6 @@
                             <!--begin::Select2-->
                             <select class="form-select mb-2" data-control="select2" name="status" data-hide-search="true"
                                 data-placeholder="Select an option" id="kt_ecommerce_add_category_store_template">
-                                <option value="{{ null }}">Null</option>
                                 <option value="Active">Active</option>
                                 <option value="Inacitve">Inacitve</option>
                                 {{--                                <option value="True">True</option> --}}
